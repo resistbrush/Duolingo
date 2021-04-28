@@ -42,11 +42,11 @@ header#legal_header {
   width: 100%;
   display: block;
   background:url("images/unsplash_brown_wooden_tool_on_white_surface.webp");
-  background-position: top;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  height: 700px;
+  height: 70vh;
 }
 
 #navbar {

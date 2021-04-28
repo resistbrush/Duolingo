@@ -30,7 +30,7 @@ header#about_header {
   width: 100%;
   display: block;
   background: url("images/unsplash_black_laptop_computer_turned_off.webp");
-  background-position: bottom;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   color: white;

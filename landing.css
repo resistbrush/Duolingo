@@ -34,7 +34,7 @@ header#about_header {
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  height: 70vh;
+  height: 100vh;
 }
 
 header#legal_header {
@@ -42,11 +42,11 @@ header#legal_header {
   width: 100%;
   display: block;
   background:url("images/unsplash_brown_wooden_tool_on_white_surface.webp");
-  background-position: bottom;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  height: 70vh;
+  height: 100vh;
 }
 
 #navbar {

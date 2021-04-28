@@ -1,4 +1,4 @@
-var PAGE_HOME = "about_notes";
+var PAGE_HOME = "about_duolingo";
 var PAGE_LEGAL = "legal2";
 var PAGE_ABOUT_US = "about_us";
 
@@ -51,7 +51,7 @@ $(document).ready(function() {
 
 
 
-  $("#pp").click(function() {
+  $("#policy_privacy").click(function() {
     scrollToTop();
     loadLegal();
   });
@@ -76,7 +76,7 @@ $(document).ready(function() {
     scrollToAfterLoad("#about");
   });
 
-  $("#home_features").click(function() {
+  $("#landing_features").click(function() {
     scrollToAfterLoad("#features");
   });
 
@@ -95,10 +95,9 @@ $(document).ready(function() {
 
 
 function loadAboutNotes() {
-  $("#content_placeholder").load("about_notes.html");
+  $("#content_placeholder").load("about_duolingo.html");
   //current = PAGE_HOME; not needed because already initialized to that value TODO
-  document.getElementById("content_placeholder").innerHTML='<object type="text/html" data=" about_notes.html " ></object>';
-  if (typeof(Storage) !== "undefined") {
+   if (typeof(Storage) !== "undefined") {
     sessionStorage.setItem('pageToShow', current);
   }
 }
@@ -139,7 +138,7 @@ function scrollToElement(where, offset) {
 
 function scrollToAfterLoad(scrollToWhere) {
   if (current != PAGE_HOME) {
-    $("#content_placeholder").load("about_notes.html", function() {
+    $("#content_placeholder").load("about_duolingo.html", function() {
       if (scrollToWhere === "top") scrollToTop();
       else scrollToElement(scrollToWhere, -120);
     });

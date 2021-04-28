@@ -45,7 +45,7 @@ header#legal_header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: white;
+  color: blueviolet;
   height: 100vh;
 }
 
@@ -135,15 +135,15 @@ div h3 {
   font-size: 40px;
 }
 
-/*in legal2.html h1:resistbrush.github.io */
+/*in legal.html h1:resistbrush.github.io */
 section.legal h1 {
   font-size: 30px;
 }
-/*in legal2.html h3: Legal (style="font-size: 40px;"), Information Collection And Use, Log Data, etc. */
+/*in legal.html h3: Legal (style="font-size: 40px;"), Information Collection And Use, Log Data, etc. */
 section.legal h3 {
   font-size: 20px;
 }
-/*in legal2.html ul: ‘You must not:’, ‘You warrant and represent that:’, etc. */
+/*in legal.html ul: ‘You must not:’, ‘You warrant and represent that:’, etc. */
 div#page_content section.legal ul {
   list-style: inside;
   margin-top: 1em;
@@ -160,6 +160,7 @@ div section h4 {
 
 /*all text in <p></p> in div class=”text_div” */
 .text_div p {
+  text-indent:2em;
   font-size: 20px;
 }
 
@@ -171,9 +172,9 @@ div section h4 {
 
 /*class=feature_img under id=features_div in about_duolingo.html under "Why Duolingo?"*/
 #features_div .feature_img {
-  vertical-align: middle;
   align-self: center;
   height: 500px;
+padding-bottom: 50px;
 }
 #duolingo_founder_img {
   vertical-align: middle;
@@ -193,10 +194,10 @@ div section h4 {
   
 /*landing img Far and away the best language learning app' THE WALL STREET JOURNAL*/
 /*possibly redundant height: 500px; below */
-#landing_img {
+.landing_img {
   white-space:pre;
   height: 500px;
-  vertical-align: middle;
+  padding-bottom:50px;
   align-self: center;
  }
 
@@ -306,12 +307,18 @@ label {
   section#contact div.content_div p {
     text-align: center;
   }
+
 /*redundant */
   form {
     /* background-color: lightgreen; */
     align-self: center;
   }
+.language_list {
+  	padding-bottom: 40px;
+
 }
+}
+
 /*on (condition) footer  ul flex-direction: column (PP, Legal, About Us) */
 @media screen and (max-width: 400px) {
   footer ul {
@@ -360,8 +367,11 @@ div#error p {
 .text_div {
   margin-left: 30px;
   margin-right: 30px;
-  margin-bottom: 30px;
+  padding-bottom: 50px;
   border-bottom: 2px solid #e5e5e5;
+}
+#download_placeholder div:last-child {
+  border-bottom: none;
 }
 /*check*/
 @media screen and (max-width: 700px) {

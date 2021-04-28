@@ -175,6 +175,14 @@ div section h4 {
   align-self: center;
   height: 500px;
 }
+#duolingo_founder_img {
+  vertical-align: middle;
+  align-self: center;
+  height: 500px;
+  left:0;
+}
+
+
 /* class id=”language_list” in about_duolingo.html list of languages */
 /*NB remove from ‘Receive immediate grading’*/
 .language_list {

@@ -1,5 +1,5 @@
 var PAGE_HOME = "about_duolingo";
-var PAGE_LEGAL = "legal2";
+var PAGE_LEGAL = "legal";
 var PAGE_ABOUT_US = "about_us";
 
 var current = PAGE_HOME;
@@ -103,7 +103,7 @@ function loadAboutNotes() {
 }
 
 function loadLegal() {
-  $("#content_placeholder").load("legal2.html");
+  $("#content_placeholder").load("legal.html");
   current = PAGE_LEGAL;
 
 

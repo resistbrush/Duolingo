@@ -17,9 +17,7 @@ header {
   position: relative;
   width: 100%;
   display: block;
-  background:
-    /*linear-gradient(rgba(82, 255, 25, 0.15), rgba(12,12,12,0.1)),*/
-    url("images/unsplash_two_men_laughing_white_sitting_on_chairs.webp");
+  background: url("images/unsplash_two_men_laughing_white_sitting_on_chairs.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -32,11 +30,11 @@ header#about_header {
   width: 100%;
   display: block;
   background: url("images/unsplash_black_laptop_computer_turned_off.webp");
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  height: 100vh;
+  height: 700px;
 }
 
 header#legal_header {
@@ -44,11 +42,11 @@ header#legal_header {
   width: 100%;
   display: block;
   background:url("images/unsplash_brown_wooden_tool_on_white_surface.webp");
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  height: 70vh;
+  height: 700px;
 }
 
 #navbar {
@@ -74,15 +72,15 @@ nav#top-menu li a:hover {
   color: yellow;
   font-weight: bold;
 }
-
-/*nav#top-menu li a img {
+/*possible redundancy below*/
+nav#top-menu li a img {
   padding-right: 10px;
   position: relative;
   display: inline-block;
   top: 0;
   vertical-align: middle;
   bottom: 0;
-}*/
+}
 
 .parent-menu {
   padding: 20px 30px 20px 30px;
@@ -103,6 +101,10 @@ nav#top-menu li a:hover {
 .icon {
   display: inline-block;
 }
+/*possible redundancy below*/
+.sub-menu-caption:hover .sub-menu {
+  display: block;
+}
 
 /*duolingo Learn language for free. Forever. properties */
 .title {
@@ -114,34 +116,34 @@ nav#top-menu li a:hover {
   margin-right: 60px;
 }
 
-/*duolingo*/
+/*in about_duolingo.html ‘duolingo’*/
 .title h1 {
   font-size: 72px;
   color: white;
   font-family: 'Coming Soon', cursive;
 }
 
-/*Learn language for free. Forever. */
+/* in about_duolingo.html ‘Learn language for free. Forever.’ */
 .title h3 {
   color: white;
-  font-size: 40px;
+  /*font-size: 40px;*/
   font-family: 'Coming Soon', cursive;
 }
 
-/*h3: The best new way to learn a language., Why Duolingo?, etc.*/
+/* in about_duolingo.html h3: ‘The best new way to learn a language.’, ‘Why Duolingo?’, etc.*/
 div h3 {
   font-size: 40px;
 }
 
-
+/*in legal2.html h1:resistbrush.github.io */
 section.legal h1 {
   font-size: 30px;
 }
-
+/*in legal2.html h3: Legal (style="font-size: 40px;"), Information Collection And Use, Log Data, etc. */
 section.legal h3 {
   font-size: 20px;
 }
-
+/*in legal2.html ul: ‘You must not:’, ‘You warrant and represent that:’, etc. */
 div#page_content section.legal ul {
   list-style: inside;
   margin-top: 1em;
@@ -151,29 +153,30 @@ div#page_content section.legal ul {
   padding-left: 40px;
 }
 
-/*Personalized learning, Receive immediate grading etc.*/
+/*in about_duolingo.html h4: Personalized learning, Receive immediate grading etc.*/
 div section h4 {
   font-size: 30px;
 }
 
-/*all text in <p> in page_content*/
+/*all text in <p></p> in div class=”text_div” */
 .text_div p {
   font-size: 20px;
 }
 
-/*list under #features_div "Why Duolingo?"*/
+/*list under #features_div in about_duolingo.html under "Why Duolingo?"*/
 #features_div, #about_text {
   display: flex;
   flex-direction: column;
 }
 
-/*class=feature_img under id=features_div "Why Duolingo?"*/
+/*class=feature_img under id=features_div in about_duolingo.html under "Why Duolingo?"*/
 #features_div .feature_img {
   vertical-align: middle;
   align-self: center;
   height: 500px;
 }
-
+/* class id=”language_list” in about_duolingo.html list of languages */
+/*NB remove from ‘Receive immediate grading’*/
 .language_list {
     flex-direction: column;
 	padding-left: 60px;
@@ -181,7 +184,8 @@ div section h4 {
   }
   
 /*landing img Far and away the best language learning app' THE WALL STREET JOURNAL*/
-.landing_img {
+/*possibly redundant height: 500px; below */
+#landing_img {
   white-space:pre;
   height: 500px;
   vertical-align: middle;
@@ -195,20 +199,20 @@ div section h4 {
   width: 100%;
   float: left;
 }
-
+/* section properties inside page_content */
 section {
   margin-left: 60px;
   margin-right: 60px;
   margin-top: 60px;
 }
  
-/*index.html The best way to learn a new language text-alignment*/
+/*in about_duolingo.html: ‘The best way to learn a new language text-alignment’, etc. */
 section#about div.text_div {
   text-align: left;
 }
 
 /***************************************************************************/
-/*about_us.html contact form*/
+/*in about_us.html */
 section#contact div.text_div {
   display: flex;
   flex-direction: column;
@@ -217,7 +221,7 @@ section#contact div.text_div {
 section#contact div.text_div p {
   text-align: left;
 }
-
+/*possible redundancy*/
 form {
   /* Center the form on the page */
   /* margin: 0 auto; */
@@ -240,10 +244,9 @@ textarea {
   vertical-align: top;
   height: 5em;
 }
-
+/*NB check*/
 button {
   margin-left: .5em;
-
   display: inline-block;
   border: none;
   padding: 1rem 2rem;
@@ -260,16 +263,16 @@ button {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
-
+/*check*/
 button:hover,
 button:focus {
   background: #c25700;
 }
-
+/*check*/
 button:active {
   transform: scale(0.95);
 }
-
+/*check*/
 input,
 textarea {
     /*   By default, textareas have a monospace font */
@@ -286,39 +289,37 @@ label {
   text-align: right;
   margin-bottom: 10px;
 }
-
+/*on (condition) about_duolingo.html  flex-direction: column */
 @media screen and (max-width: 1000px) {
   section#contact div.content_div {
     flex-direction: column;
   }
-
+/*<p> center alignment*/
   section#contact div.content_div p {
     text-align: center;
   }
-
+/*redundant */
   form {
     /* background-color: lightgreen; */
     align-self: center;
   }
 }
-
+/*on (condition) footer  ul flex-direction: column (PP, Legal, About Us) */
 @media screen and (max-width: 400px) {
   footer ul {
     flex-direction: column;
   }
 }
-
+/*on (condition) possible redundancy*/
 @media screen and (max-width: 500px) {
   form {
     width: 100%;
     align-self: center;
   }
-
   input,
   textarea {
     width: 100%;
   }
-
   label {
     display: inline-block;
     width: 100%;
@@ -328,15 +329,15 @@ label {
 }
 
 /**************************************************************************/
-/*index.html Duolingo on social media */
-section#about div.social div.social-btns {
+/*community.html ‘Duolingo on social media’ */
+section#about div.social div.social_buttons {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
 
 /**************************************************************************/
-/*about_us.html contact form*/
+/*about_us.html form*/
 div#error p {
   font-size: 0.8em;
   text-align: left;
@@ -347,107 +348,18 @@ div#error p {
   padding-right: 20px;
   padding-bottom: 10px;
 }
-
-@media (prefers-color-scheme: dark) {
-  form {
-    border: 1px solid #4a4a4a;
-  }
-
-  input,
-  textarea {
-    border: 1px solid #4a4a4a;
-    background-color: #3b3b3b;
-    color: #ccc;
-  }
-
-  body {
-    background-color: #292929;
-    color: #ccc;
-  }
-
-  nav#top-menu li a {
-    display: block;
-    color: #ccc;
-    text-decoration: none;
-  }
-
-  .text-center {
-    text-align: center;
-    color: #ccc;
-  }
-
-  .upper {
-    color: #ccc;
-  }
-
-  h2, h3 {
-    color: #ccc;
-  }
-
-  section.legal h3 {
-    color: #ccc;
-  }
-
-  .parent-menu {
-    padding: 25px 30px 25px 30px;
-    display: flex;
-    vertical-align: middle;
-    align-items: center;
-    list-style-type: none;
-    margin: 0;
-    background: #292929;
-  }
-
-  #navbar {
-    z-index: 999;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    box-shadow: 1px 1px 1px #4a4a4a;
-  }
-
-  /* unvisited link */
-  .legal a:link {
-    color: #ccc;
-  }
-
-  /* visited link */
-  .legal a:visited {
-    color: #dedede;
-  }
-
-  /* mouse over link */
-  .legal a:hover {
-    color: #ef6c00;
-  }
-
-  /* selected link */
-  .legal a:active {
-    color: #c25700;
-  }
-
-  hr {
-    height: 1px;
-    color: #4a4a4a;
-    background-color: #4a4a4a;
-    border: none;
-  }
-}
-
+/*class =”text_div” */
 .text_div {
   margin-left: 30px;
   margin-right: 30px;
   margin-bottom: 30px;
 }
-
+/*check*/
 @media screen and (max-width: 700px) {
   .content_div {
     flex-direction: column;
     width: 100%;
-    /* left: 0;
-    right: 0; */
     /* background-color: lightgreen; */
-    /* text-align: center; */
   }
 
   section {
@@ -455,6 +367,10 @@ div#error p {
     margin-right: 20px;
     margin-top: 60px;
   }
+ /* .actions_container {
+    flex-direction: column;*/
+    /* align-items: center; */
+  /*}*/
 
 
   .parent-menu {
@@ -507,7 +423,7 @@ div#error p {
   line-height: 30px;
   margin-left: 5px;
 }
-
+/*in about_duolingo.html flag and instant grading icons*/
 .actions_container img {
   height: 30px;
 }
@@ -517,47 +433,33 @@ div#error p {
   height: 3em;
 }
 
-.social-btns a img {
+.social_buttons a img {
   padding-left:10px;
   padding-right:10px;
   width: 60px;
 }
-/*visu lapu page_content*/
+/*div id=”page_content” ul*/
 div#page_content ul {
   list-style: none;
   margin-left: 0;
   padding-left: 0;
 }
-/*visu lapu hover li a kursors*/
+/*hover over li a coursor:pointer */
 li a:hover {
+  font-weight: bold;
   cursor: pointer;
 }
-
-/*.btn {
-  background-color: rgba(242, 213, 26, 0.8);
-  border-radius: 32px;
-  padding: 2px 10px 2px 10px;
-  border: 1px solid white;
-  text-decoration: none;
-  color: white;
+/*possible redundancy*/
+.expand {
+  display: inline-block;
 }
-
-.btn:hover {
-  background-color: rgba(242, 213, 26, 1);
-}*/
-
-/* t r b l */
-/*.btn-l {
-  padding: 10px 20px 10px 20px;
-  min-height: 50px;
-}*/
 
 /*index.html id=download img properties */
 #download img{
 	height:80px;
 	padding: 10px;	
 }
-
+/*ul in footer: li:‘Legal’, li:‘About Us’, li:PP*/
 footer ul {
   list-style-type: none;
   margin: 0;
@@ -568,33 +470,36 @@ footer ul {
   padding: 14px 16px;
   text-decoration: none;
 }
-
+/*<footer> properties*/
 footer {
   margin-bottom: 20px;
   text-align: center;
-  /* display: inline-block; */
 }
-
+/* li in footer:‘Legal’, ‘About Us’, PP*/
 footer li {
   padding: 10px;
 }
 
+/* Selects any <p> that is the last element among its siblings */
 footer li:last-child {
   border-right: none;
 }
-
+/*color for ‘Legal’, ‘Privacy Policy’, ‘about Us’*/
 footer li a {
   color: rgb(136, 136, 136);
   text-decoration: none;
 }
-
+/* footer<p> properties: ‘All trademarks belong to their respective owners.’ +1 */
 footer p {
   font-size: 0.8em;
   color: rgb(136, 136, 136);
 }
 
+/*possibly redundant as there is li a:hover */
 footer li a:hover {
-  color: #ef6c00;
+  color: yellow;
+  font-weight: bold;
+
 }
 
 h3 {

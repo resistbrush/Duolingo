@@ -48,10 +48,10 @@ function validateMyForm() {
 
 //email
 // https://www.w3resource.com/javascript/form/email-validation.php
-//name is assumed min 2 if hieroglyphs
+//name is assumed min 4 if hieroglyphs
 //message is assumed min 10 for context
   var emailOK = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue);
-  var nameOK = nameValue.length >= 2;
+  var nameOK = nameValue.length >= 4;
   var mssgOK = msgValue.length >= 10;
 
 

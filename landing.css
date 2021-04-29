@@ -137,7 +137,9 @@ nav#top-menu li a img {
   border-bottom: 3px solid black;  
   padding-bottom: 60px;
 }
-
+#content_placeholder div:last-child {
+  padding-bottom: 60px;
+}
 /* in about_duolingo.html h3: ‘The best new way to learn a language.’, ‘Why Duolingo?’, etc.*/
 .text_div h3,
  #about h3, #features h3 {

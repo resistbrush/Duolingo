@@ -59,7 +59,6 @@ header#legal_header .title, header#legal_header .title h3 {
   width: 100%;
   height:80px;
   top: 0;
-  /*box-shadow: 1px 1px 1px white;*/
 }
 
 nav#top-menu li {
@@ -76,7 +75,7 @@ nav#top-menu li a:hover {
   color: yellow;
   font-weight: bold;
 }
-/*possible redundancy below*/
+/*for small max-width*/
 nav#top-menu li a img {
   padding-right: 10px;
   position: relative;
@@ -105,11 +104,6 @@ nav#top-menu li a img {
 .icon {
   display: inline-block;
 }
-/*possible redundancy below*/
-.sub-menu-caption:hover .sub-menu {
-  display: block;
-}
-
 /*duolingo Learn language for free. Forever. properties */
 .title {
   text-align: left;
@@ -203,8 +197,8 @@ padding-bottom: 50px;
 /*NB remove from ‘Receive immediate grading’*/
 .language_list {
     flex-direction: column;
-	padding-left: 60px;
-	
+	flex-direction: column;
+	padding-left: 60px;	
   }
   
 /*landing img Far and away the best language learning app' THE WALL STREET JOURNAL*/
@@ -245,7 +239,6 @@ section#contact div.text_div p {
   text-align: left;
   padding-left: 60px;
 }
-/*possible redundancy*/
 form {
   width: 400px;
   padding: 20px;
@@ -276,7 +269,7 @@ button {
   margin: 0;
   text-decoration: none;
   background: #ef6c00;
-  color: whit;
+  color: white;
   font-family: sans-serif;
   font-size: 1rem;
   cursor: pointer;
@@ -285,24 +278,23 @@ button {
     transform 150ms ease;
   border-radius: 2rem;
 }
-/*check*/
+
 button:hover,
 button:focus {
   background: #c25700;
   font-weight: bold;
 }
-/*check*/
+
 active {
   transform: scale(0.95);
 }
 /*check*/
 input,
 textarea {
-    /*   By default, textareas have a monospace font */
-  font: 1em sans-serif;
+   font: 1em sans-serif;
   width: 300px;
   box-sizing: border-box;
-  border: 1px solid #999;
+  border: 1px solid black;
   margin-bottom: 10px;
 }
 
@@ -321,28 +313,18 @@ label {
   section#contact div.content_div p {
     text-align: center;
   }
-
-/*redundant */
+/*takes less space */
   form {
-    /* background-color: lightgreen; */
     align-self: center;
   }
 .language_list {
-  	padding-bottom: 40px;
-
+  	padding-bottom: 50px;
 }
 }
 
-/*on (condition) footer  ul flex-direction: column (PP, Legal, About Us) */
-@media screen and (max-width: 400px) {
-  footer ul {
-    flex-direction: column;
-  }
-}
-/*on (condition) possible redundancy*/
 @media screen and (max-width: 500px) {
   form {
-    width: 100%;
+    width: max-content;
     align-self: center;
   }
   input,
@@ -368,10 +350,10 @@ section#about div.social div.social_buttons {
 /**************************************************************************/
 /*about_us.html form*/
 div#error p {
-  font-size: 0.8em;
+  font-size: 1em;
   text-align: left;
   background-color: #ff9c9c;
-  color: #cf0000;
+  color:black;
   padding-top: 10px;
   padding-left: 20px;
   padding-right: 20px;
@@ -382,39 +364,31 @@ div#error p {
   margin-left: 30px;
   margin-right: 30px;
   padding-bottom: 50px;
-  border-bottom: 2px solid #e5e5e5;
+  border-bottom: 2px solid lightgray;
 }
 #download_placeholder div:last-child {
   border-bottom: none;
   margin-top: 50px;
 }
-/*check*/
+/*todo fix navbar in landing.js*/
 @media screen and (max-width: 700px) {
   .content_div {
     flex-direction: column;
     width: 100%;
-    /* background-color: lightgreen; */
-  }
-
+     }
   section {
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 60px;
   }
- /* .actions_container {
-    flex-direction: column;*/
-    /* align-items: center; */
-  /*}*/
+ .actions_container {
+    flex-direction: column;
+    align-items: center; 
+  }
 
 
   .parent-menu {
     padding: 10px 15px 10px 15px;
-    /* display: flex;
-      vertical-align: middle;
-      align-items: center;
-      list-style-type: none;
-      margin: 0;
-      background: #fff; */
     flex-direction: column;
   }
 
@@ -429,14 +403,14 @@ div#error p {
 
   .title {
     text-align: center;
-    /* position: absolute; */
-    bottom: 30px;
+    bottom: 0px;
+/*to get in middle*/
     margin-left: 0px;
     margin-right: 0px;
     left: 0;
     right: 0;
   }
-
+/*takes less space*/
   .text_div {
     margin-left: 0px;
     margin-right: 0px;
@@ -493,11 +467,12 @@ li a:hover {
 	height:80px;
 	padding: 10px;	
 }
+/*todo */
 .legal img {
   background-color:white ;
   padding: 0px 60px;
   border-radius: 60px;
-  border: 5px solid #555;
+  border: 5px solid gray;
 }
 /*ul in footer: li:‘Legal’, li:‘About Us’, li:PP*/
 footer ul {
@@ -537,7 +512,7 @@ footer p {
 
 /*possibly redundant as there is li a:hover */
 footer li a:hover {
-  color: yellow;
+  color: black;
   font-weight: bold;
 
 }

@@ -229,19 +229,20 @@ section#about div.text_div {
 /*in about_us.html */
 section#contact div.text_div {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
 }
 
 section#contact div.text_div p {
   text-align: left;
+  padding-left: 60px;
 }
 /*possible redundancy*/
 form {
-  /* Center the form on the page */
-  /* margin: 0 auto; */
   width: 400px;
-  padding: 1em;
-  border: 1px solid #CCC;
+  padding: 20px;
+  border: 1px solid gray;	
+  background-color: lightyellow;
+  border-radius: 25px;
 }
 
 form ul {
@@ -260,30 +261,29 @@ textarea {
 }
 /*NB check*/
 button {
-  margin-left: .5em;
   display: inline-block;
   border: none;
   padding: 1rem 2rem;
   margin: 0;
   text-decoration: none;
   background: #ef6c00;
-  color: #ffffff;
+  color: whit;
   font-family: sans-serif;
   font-size: 1rem;
   cursor: pointer;
   text-align: center;
   transition: background 250ms ease-in-out,
     transform 150ms ease;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  border-radius: 2rem;
 }
 /*check*/
 button:hover,
 button:focus {
   background: #c25700;
+  font-weight: bold;
 }
 /*check*/
-button:active {
+active {
   transform: scale(0.95);
 }
 /*check*/
@@ -301,7 +301,7 @@ label {
   display: inline-block;
   width: 90px;
   text-align: right;
-  margin-bottom: 10px;
+  margin-bottom: 1em;
 }
 /*on (condition) about_duolingo.html  flex-direction: column */
 @media screen and (max-width: 1000px) {

@@ -13,7 +13,7 @@ body {
   padding: 0;
 }
 
-header {
+header#landing_header {
   position: relative;
   width: 100%;
   display: block;
@@ -21,6 +21,7 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: 'Coming Soon', cursive;
   color: white;
   height: 100vh;
 }
@@ -45,10 +46,12 @@ header#legal_header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: blueviolet;
-  height: 100vh;
+  font-family: Roboto, sans-serif;
+  height: 80vh;
 }
-
+header#legal_header .title, header#legal_header .title h3 {
+ 	color: blueviolet;
+}
 #navbar {
   z-index: 999;	
   position: fixed;
@@ -119,22 +122,24 @@ nav#top-menu li a img {
 /*in about_duolingo.html ‘duolingo’*/
 .title h1 {
   font-size: 72px;
-  color: white;
-  font-family: 'Coming Soon', cursive;
 }
 
 /* in about_duolingo.html ‘Learn language for free. Forever.’ */
-.title h3 {
+#landing_header  .title h3 {
   color: white;
-  /*font-size: 40px;*/
-  font-family: 'Coming Soon', cursive;
+  font-size: 40px;
+  }
+#about_header h3, #contact h3 {
+  font-size: 40px;  
 }
 
 /* in about_duolingo.html h3: ‘The best new way to learn a language.’, ‘Why Duolingo?’, etc.*/
-div h3 {
-  font-size: 40px;
-}
-
+.text_div h3,
+ #about h3, #features h3 {
+margin-top: 0;  
+font-size: 40px;
+  color: black;
+} 
 /*in legal.html h1:resistbrush.github.io */
 section.legal h1 {
   font-size: 30px;
@@ -519,10 +524,6 @@ footer li a:hover {
   color: yellow;
   font-weight: bold;
 
-}
-
-h3 {
-  color: black;
 }
 
 .text-center {

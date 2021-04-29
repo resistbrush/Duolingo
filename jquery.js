@@ -110,7 +110,7 @@ function loadLegal() {
 }
 //function to load bout_us.html into div id="content_placeholder" into index.html and
 //if localStorage and sessionStorage supported set pageToShow as current (about_us)
-function loadAboutCherry() {
+function loadAboutUs() {
   $("#content_placeholder").load("about_us.html");
   current = PAGE_ABOUT_US;
   if (typeof(Storage) !== "undefined") {

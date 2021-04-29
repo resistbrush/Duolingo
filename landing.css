@@ -5,6 +5,7 @@ student ID number: jd20020
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 html {
   font-family: Roboto, sans-serif;
+  font-size: 16px;
 }
 
 body {
@@ -132,6 +133,10 @@ nav#top-menu li a img {
 #about_header h3, #contact h3 {
   font-size: 40px;  
 }
+.legal_text{
+  border-bottom: 3px solid black;  
+  padding-bottom: 60px;
+}
 
 /* in about_duolingo.html h3: ‘The best new way to learn a language.’, ‘Why Duolingo?’, etc.*/
 .text_div h3,
@@ -140,6 +145,9 @@ margin-top: 0;
 font-size: 40px;
   color: black;
 } 
+#about h3 {
+  padding-top:60px;
+}
 /*in legal.html h1:resistbrush.github.io */
 section.legal h1 {
   font-size: 30px;
@@ -376,6 +384,7 @@ div#error p {
 }
 #download_placeholder div:last-child {
   border-bottom: none;
+  margin-top: 50px;
 }
 /*check*/
 @media screen and (max-width: 700px) {
@@ -478,7 +487,7 @@ li a:hover {
 }
 
 /*index.html id=download img properties */
-#download img{
+#download img, .legal img {
 	height:80px;
 	padding: 10px;	
 }

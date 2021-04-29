@@ -50,6 +50,7 @@ if (typeof(Storage) !== "undefined" && sessionStorage.getItem('scrollTop')) {
   if (typeof(Storage) !== "undefined") {
     sessionStorage.setItem('scrollTop', scroll);
   }
+  
 //function execute scrollToTop(); loadLegal (); - to load legal.html into index.html and place window on top on click on element w/id="policy_privacy"
   $("#policy_privacy").click(function() {
     scrollToTop();
@@ -147,7 +148,6 @@ function scrollToAfterLoad(scrollToWhere) {
     sessionStorage.setItem('pageToShow', current);
   }
 }
-
 $(window).scroll(function() {
   var scroll = $(this).scrollTop()
 

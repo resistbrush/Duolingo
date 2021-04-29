@@ -15,7 +15,6 @@ if (typeof(Storage) !== "undefined" && sessionStorage.getItem('pageToShow')) {
 }
 
 $(document).ready(function() {
-
 //load PAGE_HOME (about_duolingo.html) if (current === PAGE_HOME) 
 //on landing or when clicked navbar ‘Duolingo’,’About’,’Features’ 
   if (current === PAGE_HOME) {
@@ -104,10 +103,13 @@ function loadAboutDuolingo() {
 function loadLegal() {
   $("#content_placeholder").load("legal.html");
   current = PAGE_LEGAL;
+
+
   if (typeof(Storage) !== "undefined") {
     sessionStorage.setItem('pageToShow', current);
   }
 }
+
 //function to load bout_us.html into div id="content_placeholder" into index.html and
 //if localStorage and sessionStorage supported set pageToShow as current (about_us)
 function loadAboutUs() {

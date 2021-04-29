@@ -1,13 +1,10 @@
 var PAGE_HOME = "about_duolingo";
 var PAGE_LEGAL = "legal";
 var PAGE_ABOUT_US = "about_us";
+
 var current = PAGE_HOME;
 
-//Using Session Storage from https://stackoverflow.com/a/23853418/4673960
-// https://coderoad.ru/23851413/%D0%9A%D0%B0%D0%BA-%D1%81%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D1%82%D1%8C-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B2%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5-%D0%B2-DOM-javascript-jquery-%D0%BD%D0%B0-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B5 
-// https://www.w3schools.com/html/html5_webstorage.asp
-/* Check if session has some page to show stored*/
-/*create var pageToShow, change current to pageToShow
+//https://stackoverflow.com/a/23853418/4673960
 if (typeof(Storage) !== "undefined" && sessionStorage.getItem('pageToShow')) {
   var pageToShow = sessionStorage.getItem('pageToShow');
   current = pageToShow;
@@ -16,30 +13,31 @@ if (typeof(Storage) !== "undefined" && sessionStorage.getItem('pageToShow')) {
 
 $(document).ready(function() {
 
-  //load PAGE_HOME (about_duolingo.html) if (current === PAGE_HOME) 
-//on landing or when clicked navbar ‘Duolingo’,’About’,’Features’ 
+  //load saved page
   if (current === PAGE_HOME) {
     loadAboutNotes();
-//load PAGE_LEGAL (legal.html) if (current === PAGE_LEGAL) 
   } else {
     if (current === PAGE_LEGAL) {
       loadLegal();
-//load PAGE_ABOUT_US (about_us.html) if (current === PAGE_ABOUT_US) 
     } else if (current === PAGE_ABOUT_US) {
-      loadAboutUS();
+      loadAboutCherry();
     }
   }
-//function to load community.html into index.html div id=community_placeholder
+
   $("#community_placeholder").load("community.html");
-//function to load download.html into index.html div id= download_placeholder
   $("#download_placeholder").load("download.html");
-// Take window to same scroll position on reload
-// https://stackoverflow.com/questions/36084881/take-window-to-same-scroll-position-on-reload/36085018
+
+
   if (typeof(Storage) !== "undefined" && sessionStorage.getItem('scrollTop')) {
-    var scrollpos = sessionStorage.getItem('scrollTop');
-        window.setTimeout(function() {
-      // console.log("afTimeOut " + scrollpos);
-      $(window).scrollTop(scrollpos);
+    var scr = sessionStorage.getItem('scrollTop');
+    // console.log(scr);
+    //$(document).scrollTop(scr); works in IE and Edge, not others
+    // $('html, body').animate({ scrollTop: scr }, "fast"); //works in Chrome, but has an annoying side-effect.
+    //$("html").scrollTop(scr); in ie and Edge
+
+    window.setTimeout(function() {
+      // console.log("afTimeOut " + scr);
+      $(window).scrollTop(scr);
     }, 100); //works in all. thanks: JamoCA https://github.com/flesler/jquery.scrollTo/issues/164
 
   }
@@ -65,7 +63,7 @@ $(document).ready(function() {
 
   $("#about").click(function() {
     scrollToTop();
-    loadAboutUs ();
+    loadAboutCherry();
   });
 
 
@@ -114,7 +112,7 @@ function loadLegal() {
   }
 }
 
-function loadAboutUs () {
+function loadAboutCherry() {
   $("#content_placeholder").load("about_us.html");
   current = PAGE_ABOUT_US;
 

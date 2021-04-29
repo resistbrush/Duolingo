@@ -36,7 +36,7 @@ header#about_header {
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  height: 100vh;
+  height: 80vh;
 }
 
 header#legal_header {
@@ -185,12 +185,12 @@ div section h4 {
   height: 500px;
 padding-bottom: 50px;
 }
-#duolingo_founder_img {
-  vertical-align: middle;
-  align-self: center;
-  height: 500px;
-  left:0;
-}
+/*#duolingo_founder_img {*/
+ /* vertical-align: middle;*/
+ /* align-self: center;*/
+ /* height: 500px;*/
+ /* left:0;*/
+/*}*/
 
 
 /* class id=”language_list” in about_duolingo.html list of languages */

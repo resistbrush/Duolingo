@@ -491,6 +491,12 @@ li a:hover {
 	height:80px;
 	padding: 10px;	
 }
+.legal img {
+  background-color:white ;
+  padding: 0px 60px;
+  border-radius: 60px;
+  border: 5px solid #555;
+}
 /*ul in footer: li:‘Legal’, li:‘About Us’, li:PP*/
 footer ul {
   list-style-type: none;

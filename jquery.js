@@ -26,7 +26,7 @@ $(document).ready(function() {
       loadLegal();
 //load PAGE_ABOUT_US (about_us.html) if (current === PAGE_ABOUT_US) 
     } else if (current === PAGE_ABOUT_US) {
-      loadAboutUS();
+      loadAboutUs();
     }
   }
   

@@ -104,6 +104,7 @@ function errorInfo(text) {
     g.innerHTML = text;
     g.id = 'error_name';
   }
+  return false;
 }
 
 

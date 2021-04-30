@@ -1,7 +1,7 @@
 var PAGE_HOME = "about_duolingo";
 var PAGE_LEGAL = "legal";
 var PAGE_ABOUT_US = "about_us";
-
+//var PAGE_T_AND_C = "terms_and_conditions";
 var current = PAGE_HOME;
 
 //Using Session Storage from https://stackoverflow.com/a/23853418/4673960

@@ -2,7 +2,7 @@ var visible = false;
 
 document.addEventListener("DOMContentLoaded", function() {
   var iconItem = document.getElementById("icon_item");
-//id="icon_item" (Duolingo Icon on navbar) activates function
+
   iconItem.addEventListener("click", function() {
     if (document.body.clientWidth < 700) hideShowMenu();
   });
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
       };
     });
   }
-//hide menu when clientWidth (resized) < 700
+
   window.addEventListener("resize", function(event) {
     if (document.body.clientWidth >= 700) {
       if (!visible) {
@@ -46,12 +46,9 @@ function validateMyForm() {
   var nameValue = name.value;
   var msgValue = message.value;
 
-//email
-// https://www.w3resource.com/javascript/form/email-validation.php
-//name is assumed min 4 if hieroglyphs
-//message is assumed min 10 for context
+  //https://stackoverflow.com/a/32686261/4673960
   var emailOK = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue);
-  var nameOK = nameValue.length >= 4;
+  var nameOK = nameValue.length >= 2;
   var mssgOK = msgValue.length >= 10;
 
 
@@ -60,8 +57,7 @@ function validateMyForm() {
       document.getElementById('error_name').style.display = "none";
     }
 
-    alert("Message sent!")
-//clear contents
+    alert("Success, message sent!")
     email.value = "";
     name.value = "";
     message.value = "";
@@ -72,17 +68,17 @@ function validateMyForm() {
     var errorMessage = "";
 
     if (!nameOK) {
-      errorMessage += "Name value error";
+      errorMessage += "Please enter your name";
     }
 
     if (!emailOK) {
       if (errorMessage.length > 0) errorMessage += "\n";
-      errorMessage += "Email value error";
+      errorMessage += "Please enter a valid email address";
     }
 
     if (!mssgOK) {
       if (errorMessage.length > 0) errorMessage += "<br>";
-      errorMessage += "Min message length: 10 characters";
+      errorMessage += "Your message should be at least 10 characters long";
     }
 
     errorInfo(errorMessage);

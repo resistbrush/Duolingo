@@ -62,6 +62,7 @@ function validateMyForm() {
     if (document.getElementById('error_name')) {
       document.getElementById('error_name').style.display = "none";
     }
+    return true;
     alert("Message sent!")
     //clear previously entered content
     email.value = "";
@@ -83,7 +84,7 @@ function validateMyForm() {
       if (errorMessage.length > 0) errorMessage += "<br>";
       errorMessage += " Message error: min message length 10 characters. ";
     }
-
+    return false;
     errorInfo(errorMessage);
   }
 
@@ -104,7 +105,6 @@ function errorInfo(text) {
     g.innerHTML = text;
     g.id = 'error_name';
   }
-  return false;
 }
 
 

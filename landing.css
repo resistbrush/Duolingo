@@ -231,12 +231,12 @@ section {
 }
 
 /*in about_us.html */
-section#contact div.text_div {
+#contact .text_div {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
 }
 
-section#contact div.text_div p {
+#contact .text_div p {
   text-align: left;
   padding-left: 60px;
 }
@@ -249,32 +249,22 @@ form {
   border-radius: 25px;
 }
 
-form ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-form li+li {
-  margin-top: 1em;
-}
-
 textarea {
   vertical-align: top;
   height: 5em;
 }
 
-/*NB check*/
 button {
   display: inline-block;
   border: none;
   padding: 1rem 2rem;
   margin: 0;
+  /*todo keep margin text-decoration?*/
   text-decoration: none;
-  background: #ef6c00;
+  background: darkorange;
   color: white;
-  font-family: sans-serif;
   font-size: 1rem;
+  font-family: sans-serif;
   cursor: pointer;
   text-align: center;
   transition: background 250ms ease-in-out,
@@ -282,9 +272,10 @@ button {
   border-radius: 2rem;
 }
 
+/*todo bold transition looks ugly fix*/
 button:hover,
 button:focus {
-  background: #c25700;
+  background: orangered;
   font-weight: bold;
 }
 
@@ -292,32 +283,31 @@ active {
   transform: scale(0.95);
 }
 
-/*check*/
+/*todo check if its ok to use em and px in same styling*/
 input,
 textarea {
   font: 1em sans-serif;
   width: 300px;
   box-sizing: border-box;
   border: 1px solid black;
-  margin-bottom: 10px;
+  margin-bottom: 1em;
 }
 
 label {
   display: inline-block;
   width: 90px;
   text-align: right;
-  margin-bottom: 1em;
 }
 
-/*on (condition) about_duolingo.html  flex-direction: column */
+/**************************************************************************/
 @media screen and (max-width: 1000px) {
-  section#contact div.content_div {
+  /*#contact .content_div {
     flex-direction: column;
-  }
+  }*/
 
-  /*<p> center alignment*/
-  section#contact div.content_div p {
+  #contact .content_div p {
     text-align: center;
+    text-indent: 0;
   }
 
   /*takes less space */
@@ -325,12 +315,15 @@ label {
     align-self: center;
   }
 
+  /*prevents overlapping*/
   .language_list {
     padding-bottom: 50px;
   }
 }
 
 @media screen and (max-width: 500px) {
+
+  /*ensures form on screen*/
   form {
     width: max-content;
     align-self: center;
@@ -341,46 +334,15 @@ label {
     width: 100%;
   }
 
+  /*ensures label on screen*/
   label {
-    display: inline-block;
     width: 100%;
     text-align: left;
-    margin-left: 5px;
   }
-}
 
-/**************************************************************************/
-/*community.html ‘Duolingo on social media’ */
-section#about div.social div.social_buttons {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-/**************************************************************************/
-/*about_us.html form*/
-div#error p {
-  font-size: 1em;
-  text-align: left;
-  background-color: #ff9c9c;
-  color: black;
-  padding-top: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 10px;
-}
-
-/*class =”text_div” */
-.text_div {
-  margin-left: 30px;
-  margin-right: 30px;
-  padding-bottom: 50px;
-  border-bottom: 2px solid lightgray;
-}
-
-#download_placeholder div:last-child {
-  border-bottom: none;
-  margin-top: 50px;
+  .text_div p {
+    text-indent: 1em;
+  }
 }
 
 /*todo fix navbar in landing.js*/
@@ -394,6 +356,7 @@ div#error p {
     text-align: center;
   }
 
+  /*make smaller*/
   section {
     margin-left: 20px;
     margin-right: 20px;
@@ -420,6 +383,14 @@ div#error p {
     cursor: pointer;
   }
 
+  .title h1 {
+    font-size: 50px;
+  }
+
+  .title h3 {
+    font-size: 40px;
+  }
+
   .title {
     text-align: center;
     bottom: 0px;
@@ -438,7 +409,39 @@ div#error p {
   }
 }
 
+/**************************************************************************/
+/*community.html ‘Duolingo on social media’ */
+#about .social .social_buttons {
+  display: flex;
+  align-items: flex-start;
+  /*justify-content: flex-start;*/
+}
 
+#error p {
+  text-indent: 0;
+  font-size: 1em;
+  text-align: left;
+  background-color: #ff9c9c;
+  color: red;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+  border: 2px solid gray;
+}
+
+.text_div {
+  margin-left: 30px;
+  margin-right: 30px;
+  padding-bottom: 50px;
+  border-bottom: 2px solid lightgray;
+}
+
+#download_placeholder div:last-child {
+  border-bottom: none;
+  margin-top: 50px;
+}
 
 .actions_container {
   display: flex;
@@ -469,7 +472,7 @@ div#error p {
 }
 
 /*div id=”page_content” ul*/
-div#page_content ul {
+#page_content ul {
   list-style: none;
   margin-left: 0;
   padding-left: 0;
@@ -481,11 +484,6 @@ li a:hover {
   cursor: pointer;
 }
 
-/*possible redundancy*/
-.expand {
-  display: inline-block;
-}
-
 /*index.html id=download img properties */
 #download img,
 .legal img {
@@ -493,7 +491,6 @@ li a:hover {
   padding: 10px;
 }
 
-/*todo */
 .legal img {
   background-color: white;
   padding: 0px 60px;
@@ -521,7 +518,9 @@ footer {
 
 /* li in footer:‘Legal’, ‘About Us’, PP*/
 footer li {
-  padding: 10px;
+
+  border-right: 1px solid rgb(136, 136, 136);
+  padding: 0 10px 0 10px;
 }
 
 /* Selects any <p> that is the last element among its siblings */

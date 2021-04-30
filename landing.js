@@ -47,39 +47,37 @@ function validateMyForm() {
 
   //email
   // https://www.w3resource.com/javascript/form/email-validation.php
-  //name is assumed min 4 if hieroglyphs
+  //name is assumed min 2 if hieroglyphs
   //message is assumed min 10 for context
   var emailOK = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue);
-  var nameOK = nameValue.length >= 4;
+  var nameOK = nameValue.length >= 2;
   var mssgOK = msgValue.length >= 10;
 
-
+//all user input values match requirements 
   if (emailOK && nameOK && mssgOK) {
     if (document.getElementById('error_name')) {
       document.getElementById('error_name').style.display = "none";
     }
-
     alert("Message sent!")
-    //clear contents
+    //clear previously entered content
     email.value = "";
     name.value = "";
     message.value = "";
   } else {
-
     var errorMessage = "";
 
     if (!nameOK) {
-      errorMessage += "Name value error";
+      errorMessage += " Name value error: min name length 2 characters. ";
     }
 
     if (!emailOK) {
       if (errorMessage.length > 0) errorMessage += "\n";
-      errorMessage += "Email value error";
+      errorMessage += " Email value error. Please enter a valid email. ";
     }
 
     if (!mssgOK) {
       if (errorMessage.length > 0) errorMessage += "<br>";
-      errorMessage += "Min message length: 10 characters";
+      errorMessage += " Message error: min message length 10 characters. ";
     }
 
     errorInfo(errorMessage);

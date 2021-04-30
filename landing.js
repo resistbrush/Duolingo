@@ -64,10 +64,11 @@ function validateMyForm() {
     }
     alert("Message sent!")
     //clear previously entered content
+    return true;
     email.value = "";
     name.value = "";
     message.value = "";
-    return true;
+
   } else {
     var errorMessage = "";
 

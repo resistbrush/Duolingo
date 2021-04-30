@@ -32,7 +32,7 @@ body {
 }
 
 /*about_duolingo.html id="about" - The best way to learn a language.*/
-#about h3 {
+#about2 h3 {
   padding-top: 60px;
 }
 
@@ -122,8 +122,7 @@ body {
   font-size: 72px;
 }
 
-.title h3,
-#contact h3 {
+h3 {
   font-size: 40px;
 }
 
@@ -137,9 +136,7 @@ body {
 }
 
 /* in about_duolingo.html h3: ‘The best new way to learn a language.’, ‘Why Duolingo?’, etc.*/
-.text_div h3,
-#about2 h3,
-#features h3 {
+.text_div h3 {
   margin-top: 0px;
   font-size: 40px;
   color: black;
@@ -156,7 +153,7 @@ section.legal h3 {
 }
 
 /*in legal.html ul: ‘You must not:’, ‘You warrant and represent that:’, etc. */
-div#page_content section.legal ul {
+#page_content .legal ul {
   list-style: inside;
   margin-top: 1em;
   margin-bottom: 1em;
@@ -166,7 +163,7 @@ div#page_content section.legal ul {
 }
 
 /*in about_duolingo.html h4: Personalized learning, Receive immediate grading etc.*/
-div section h4 {
+h4 {
   font-size: 30px;
 }
 
@@ -176,6 +173,7 @@ div section h4 {
   font-size: 20px;
 }
 
+/*can be id="about_text" as only one such id loaded at single time*/
 /*list under #features_div in about_duolingo.html under "Why Duolingo?"*/
 #features_div,
 #about_text {
@@ -183,8 +181,8 @@ div section h4 {
   flex-direction: column;
 }
 
-/*class=feature_img under id=features_div in about_duolingo.html under "Why Duolingo?"*/
-#features_div .feature_img {
+/*class=feature_img in about_duolingo.html under "Why Duolingo?"*/
+.feature_img {
   align-self: center;
   height: 500px;
   padding-bottom: 50px;
@@ -197,11 +195,9 @@ div section h4 {
 /* left:0;*/
 /*}*/
 
-
 /* class id=”language_list” in about_duolingo.html list of languages */
 /*NB remove from ‘Receive immediate grading’*/
 .language_list {
-  flex-direction: column;
   flex-direction: column;
   padding-left: 60px;
 }
@@ -223,18 +219,17 @@ div section h4 {
   float: left;
 }
 
-/* section properties inside page_content */
+/* section properties inside page_content (apply to all html loaded into index.html)*/
 section {
   margin-left: 60px;
   margin-right: 60px;
 }
 
 /*in about_duolingo.html: ‘The best way to learn a new language text-alignment’, etc. */
-section#about div.text_div {
+#about .text_div {
   text-align: left;
 }
 
-/***************************************************************************/
 /*in about_us.html */
 section#contact div.text_div {
   display: flex;

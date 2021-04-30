@@ -2,7 +2,7 @@ var visible = false;
 
 document.addEventListener("DOMContentLoaded", function() {
   var iconItem = document.getElementById("icon_item");
-//id="icon_item" (Duolingo Icon on navbar) activates function
+  //id="icon_item" (Duolingo Icon on navbar) activates function
   iconItem.addEventListener("click", function() {
     if (document.body.clientWidth < 700) hideShowMenu();
   });
@@ -18,14 +18,13 @@ document.addEventListener("DOMContentLoaded", function() {
       };
     });
   }
-//hide menu when clientWidth (resized) < 700
+  //hide menu when clientWidth (resized) < 700
   window.addEventListener("resize", function(event) {
     if (document.body.clientWidth >= 700) {
       if (!visible) {
         hideShowMenu();
       }
-    } 
-	else {
+    } else {
       if (visible) {
         hideShowMenu();
       }
@@ -46,10 +45,10 @@ function validateMyForm() {
   var nameValue = name.value;
   var msgValue = message.value;
 
-//email
-// https://www.w3resource.com/javascript/form/email-validation.php
-//name is assumed min 4 if hieroglyphs
-//message is assumed min 10 for context
+  //email
+  // https://www.w3resource.com/javascript/form/email-validation.php
+  //name is assumed min 4 if hieroglyphs
+  //message is assumed min 10 for context
   var emailOK = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue);
   var nameOK = nameValue.length >= 4;
   var mssgOK = msgValue.length >= 10;
@@ -61,13 +60,11 @@ function validateMyForm() {
     }
 
     alert("Message sent!")
-//clear contents
+    //clear contents
     email.value = "";
     name.value = "";
     message.value = "";
-  } 
-  
-  else {
+  } else {
 
     var errorMessage = "";
 

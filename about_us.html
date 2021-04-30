@@ -13,7 +13,7 @@
       <div id="about_text">
         <div class="content_div">
           <div class="text_div">
-            <form id="form" autocomplete="off" onsubmit="event.preventDefault(); validateMyForm();">
+            <form id="form" name="myForm" autocomplete="off" action="https://www.w3schools.com/action_page.php" onsubmit="return validateMyForm();" method="post">
               <div id="error"></div>
 
               <label for="name">Name:</label>
@@ -25,7 +25,7 @@
               <label for="msg">Message:</label>
               <textarea style="resize: none;" id="msg" name="user_message" placeholder="Enter Your Message Here." required=""></textarea>
 
-              <button type="submit">Submit</button>
+              <button type="submit" value="Submit" formtarget="_blank">Submit</button>
             </form>
             <p>You can use this form to send a message to resistbrush. We'd love to hear your feedback!<br>
               By clicking 'Submit', you agree to our Terms and Conditions and our Data Use Policy.</p>

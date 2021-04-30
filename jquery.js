@@ -15,75 +15,75 @@ if (typeof(Storage) !== "undefined" && sessionStorage.getItem('pageToShow')) {
 }
 
 $(document).ready(function() {
-//load PAGE_HOME (about_duolingo.html) if (current === PAGE_HOME) 
-//on landing or when clicked navbar ‘Duolingo’,’About’,’Features’ 
+  //load PAGE_HOME (about_duolingo.html) if (current === PAGE_HOME) 
+  //on landing or when clicked navbar ‘Duolingo’,’About’,’Features’ 
   if (current === PAGE_HOME) {
     loadAboutDuolingo();
-//load PAGE_LEGAL (legal.html) if (current === PAGE_LEGAL) 
- } else {
+    //load PAGE_LEGAL (legal.html) if (current === PAGE_LEGAL) 
+  } else {
     if (current === PAGE_LEGAL) {
       loadLegal();
-//load PAGE_ABOUT_US (about_us.html) if (current === PAGE_ABOUT_US) 
+      //load PAGE_ABOUT_US (about_us.html) if (current === PAGE_ABOUT_US) 
     } else if (current === PAGE_ABOUT_US) {
       loadAboutUs();
     }
   }
-  
- //function to load community.html into index.html div id=community_placeholder
+
+  //function to load community.html into index.html div id=community_placeholder
   $("#community_placeholder").load("community.html");
-//function to load download.html into index.html div id= download_placeholder
+  //function to load download.html into index.html div id= download_placeholder
   $("#download_placeholder").load("download.html");
-  
-// Take window to same scroll position on reload
-// https://stackoverflow.com/questions/36084881/take-window-to-same-scroll-position-on-reload/36085018
-if (typeof(Storage) !== "undefined" && sessionStorage.getItem('scrollTop')) {
+
+  // Take window to same scroll position on reload
+  // https://stackoverflow.com/questions/36084881/take-window-to-same-scroll-position-on-reload/36085018
+  if (typeof(Storage) !== "undefined" && sessionStorage.getItem('scrollTop')) {
     var scrollpos = sessionStorage.getItem('scrollTop');
-        window.setTimeout(function() {
+    window.setTimeout(function() {
       // console.log("afTimeOut " + scrollpos);
       $(window).scrollTop(scrollpos);
     }, 100); //1s timout for scroll
   }
 
-/* if localStorage and sessionStorage support place window on top*/
+  /* if localStorage and sessionStorage support place window on top*/
   var scroll = $(window).scrollTop()
   if (typeof(Storage) !== "undefined") {
     sessionStorage.setItem('scrollTop', scroll);
   }
-  
-//function execute scrollToTop(); loadLegal (); - to load legal.html into index.html and place window on top on click on element w/id="policy_privacy"
+
+  //function execute scrollToTop(); loadLegal (); - to load legal.html into index.html and place window on top on click on element w/id="policy_privacy"
   $("#policy_privacy").click(function() {
     scrollToTop();
     loadLegal();
   });
-//function execute scrollToTop(); loadLegal (); -to load legal.html into index.html and place window on top on click on element w/id="legal"
-//TODO seperate privacy policy and legal into distinct .html
+  //function execute scrollToTop(); loadLegal (); -to load legal.html into index.html and place window on top on click on element w/id="legal"
+  //TODO seperate privacy policy and legal into distinct .html
   $("#legal").click(function() {
     scrollToTop();
     loadLegal();
   });
-//function execute scrollToTop(); loadAboutUs (); - to load about_us.html into index.html and place window on top on click on element w/id="about"
+  //function execute scrollToTop(); loadAboutUs (); - to load about_us.html into index.html and place window on top on click on element w/id="about"
   $("#about").click(function() {
     scrollToTop();
-    loadAboutUs ();
+    loadAboutUs();
   });
 
-//function to place window on top on click on element w/id="home"
+  //function to place window on top on click on element w/id="home"
   $("#home").click(function() {
     scrollToAfterLoad("top");
   });
-//function to place window on element w/id="about" on click on element w/id="home"
+  //function to place window on element w/id="about" on click on element w/id="home"
   $("#home_about").click(function() {
     scrollToAfterLoad("#about");
   });
-//function to place window on element w/id="features" on click on element w/id="landing_features"
+  //function to place window on element w/id="features" on click on element w/id="landing_features"
   $("#landing_features").click(function() {
     scrollToAfterLoad("#features");
   });
-//function to place window on element w/id="community" -120px on click on element w/id="community_nav"
+  //function to place window on element w/id="community" -120px on click on element w/id="community_nav"
   $("#community_nav").click(function() {
     scrollToElement("#community", -120);
   });
-//function to place window on element w/id="download" -120px on click on element w/id="download_nav"
+  //function to place window on element w/id="download" -120px on click on element w/id="download_nav"
 
   $("#download_nav").click(function() {
     scrollToElement("#download", -120);
@@ -94,7 +94,7 @@ if (typeof(Storage) !== "undefined" && sessionStorage.getItem('scrollTop')) {
 //if localStorage and sessionStorage supported set pageToShow as current (about_duolingo)
 function loadAboutDuolingo() {
   $("#content_placeholder").load("about_duolingo.html");
-   if (typeof(Storage) !== "undefined") {
+  if (typeof(Storage) !== "undefined") {
     sessionStorage.setItem('pageToShow', current);
   }
 }
@@ -138,14 +138,14 @@ function scrollToAfterLoad(scrollToWhere) {
       if (scrollToWhere === "top") scrollToTop();
       else scrollToElement(scrollToWhere, -120);
     });
-    
+
     current = PAGE_HOME;
-    
+
   } else {
     if (scrollToWhere === "top") scrollToTop();
     else scrollToElement(scrollToWhere, -120);
   }
-  
+
   if (typeof(Storage) !== "undefined") {
     sessionStorage.setItem('pageToShow', current);
   }

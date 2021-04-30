@@ -3,24 +3,27 @@ var visible = false;
 document.addEventListener("DOMContentLoaded", function() {
   var iconItem = document.getElementById("icon_item");
   //id="icon_item" (Duolingo Icon on navbar) activates function
+    //execute hideShowMenu when clientWidth <=700
   iconItem.addEventListener("click", function() {
-    if (document.body.clientWidth < 700) hideShowMenu();
+    if (document.body.clientWidth <= 700) hideShowMenu();
   });
+  
+  var navbarMenuElement = document.getElementsByClassName("menu-text");
 
-  var textItem = document.getElementsByClassName("menu-text");
-
-  for (i = 0; i < textItem.length; i++) {
-    textItem[i].addEventListener("click", function() {
-      if (document.body.clientWidth < 700) {
+  for (i = 0; i < navbarMenuElement.length; i++) {
+    navbarMenuElement[i].addEventListener("click", function() {
+      if (document.body.clientWidth <= 700) {
         if (visible) {
+//execute hideShowMenu when clientWidth <=700 and clicks on navbarMenuElement element
+//if(visible) aka navbar was open close it after executing
           hideShowMenu();
         }
       };
     });
   }
-  //hide menu when clientWidth (resized) < 700
+
   window.addEventListener("resize", function(event) {
-    if (document.body.clientWidth >= 700) {
+    if (document.body.clientWidth > 700) {
       if (!visible) {
         hideShowMenu();
       }
@@ -40,13 +43,14 @@ function validateMyForm() {
   const error = document.querySelector('.error');
   const name = document.getElementById("name");
   const message = document.getElementById('msg');
-
+  //Return the value property:
+//https://www.w3schools.com/jsref/prop_text_value.asp
   var emailValue = email.value;
   var nameValue = name.value;
   var msgValue = message.value;
 
   //email
-  // https://www.w3resource.com/javascript/form/email-validation.php
+  //https://www.w3resource.com/javascript/form/email-validation.php
   //name is assumed min 2 if hieroglyphs
   //message is assumed min 10 for context
   var emailOK = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue);
@@ -84,8 +88,9 @@ function validateMyForm() {
   }
 
 }
-
-
+//display error using JavaScript 
+//https://www.w3schools.com/js/js_popup.asp
+//https://www.geeksforgeeks.org/how-to-display-error-without-alert-box-using-javascript/
 function errorInfo(text) {
   var errorDiv = document.getElementById('error');
   var errorP = document.getElementById('error_name')
